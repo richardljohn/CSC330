@@ -1,3 +1,8 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Assignment: Lab1a - Temperatures
+
 public class Temperature {
 
     //Our private data variables.

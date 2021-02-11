@@ -1,18 +1,31 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Assignment: Lab1a - Temperatures
+
 import java.util.Scanner; //Importing Scanner
 
 public class TemperatureRunner{
 
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //User Input
         System.out.print("Enter a temperature: ");
+
+        //First temperature...
         double t = input.nextDouble();
         Temperature temp = new Temperature(t);
+
+        //Getting first temperature in Farenheit, Celsius, and Kelvin.
         System.out.println("Temperature in Farenheit is: " + temp.getFarenheit() + " F.");
         System.out.println("Temperature in Celsius is: " + temp.getCelsius() + " C.");
         System.out.println("Temperature in Kelvin is: " + temp.getKelvin() + " K.");
         System.out.print("Enter one more temperature: ");
+
+        //Second temperature...
         double te = input.nextDouble();
         temp.setFarenheit(te);
+
+        //Getting second temperature in Farenheit, Celsius, and Kelvin.
         System.out.println("Now the temperature in Farenheit is : " + temp.getFarenheit() + " F.");
         System.out.println("Now the temperature in Celsius is: " + temp.getCelsius() + " C.");
         System.out.println("Now the temperature in Kelvin is: " + temp.getKelvin() + " K.");
