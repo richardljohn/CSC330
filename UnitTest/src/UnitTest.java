@@ -16,7 +16,7 @@ public class UnitTest {
     //Default Constructor will load all UnitTest classes with the answer key for the test.
     UnitTest(){
         try {
-            input = new Scanner(new File("/Users/richardjohn/Desktop/Git/CSC330/ClassGrader/src/answers.txt"));
+            input = new Scanner(new File("/Users/richardjohn/Desktop/Git/CSC330/UnitTest/src/answers.txt"));
         }
         catch (Exception e){
             System.out.println("No file found.");

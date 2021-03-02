@@ -20,7 +20,7 @@ public class UnitTestRunner {
         //Reading in every student's name and answers.
         Scanner x = new Scanner(System.in);
         try{
-            x = new Scanner(new File("/Users/richardjohn/Desktop/Git/CSC330/ClassGrader/src/allExams.txt"));
+            x = new Scanner(new File("/Users/richardjohn/Desktop/Git/CSC330/UnitTest/src/allExams.txt"));
         }
         catch(Exception e){
             System.out.println("No file found.");
