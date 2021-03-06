@@ -1,10 +1,19 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Assignment: Basic Inheritance
+//Date: March 5, 2021
+
 import javax.print.DocFlavor;
 import java.util.Scanner;
 
 public class EmployeeRunner {
     public static void main(String[] args){
+
+        //For User Input
         Scanner input = new Scanner(System.in);
 
+        //UEmployee Object
         System.out.print("Enter a name: ");
         String n = input.next();
         System.out.print("Enter how much they make: ");
@@ -12,6 +21,7 @@ public class EmployeeRunner {
         UEmployee employee = new UEmployee(n, s);
         System.out.println("Employee One" + employee);
 
+        //Staff Object
         System.out.print("Enter a name: ");
         n = input.next();
         System.out.print("Enter his or her job title: ");
@@ -21,6 +31,7 @@ public class EmployeeRunner {
         Staff staff = new Staff(n, s, j);
         System.out.println("Employee Two" + staff);
 
+        //Faculty Object
         System.out.print("Enter a name: ");
         n = input.next();
         System.out.print("Enter the department he or she works in: ");

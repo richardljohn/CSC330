@@ -1,6 +1,15 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Assignment: Basic Inheritance
+//Date: March 5, 2021
+
 public class Faculty extends UEmployee {
+
+    //Private data members.
     private String deptName;
 
+    //Constructors
     Faculty(){
         deptName = "Computer Science";
     }
@@ -10,6 +19,7 @@ public class Faculty extends UEmployee {
         deptName = d;
     }
 
+    //Accessor and Mutator Methods
     public void setDeptName(String d){
         deptName = d;
     }
@@ -18,6 +28,7 @@ public class Faculty extends UEmployee {
         return deptName;
     }
 
+    //Display of a Faculty Object's information.
     public String toString() {
         return "\nName: " + getName() + "\nDepartment: " + getDeptName() + "\nSalary: " + getSalary() + "\n";
     }
