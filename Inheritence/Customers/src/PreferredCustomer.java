@@ -1,8 +1,16 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Date: March 8, 2021
+//Assignment: Preferred Customers Inheritance
+
 public class PreferredCustomer extends Customer {
 
+    //Private data members.
     private double cummulativePurchases;
     private double discount;
 
+    //Constructors.
     PreferredCustomer() {
         cummulativePurchases = 0.0;
         discount = 0.0;
@@ -14,6 +22,7 @@ public class PreferredCustomer extends Customer {
         discount = d;
     }
 
+    //Public data members. Accessors and Mutators.
     public double getCummulativePurchases(){
         return cummulativePurchases;
     }
@@ -30,6 +39,7 @@ public class PreferredCustomer extends Customer {
         discount = d;
     }
 
+    //This will help determine how much of a discount the customer has.
     public void determineDiscount(){
         double discount = 0.0;
         if(cummulativePurchases < 500){
@@ -52,6 +62,7 @@ public class PreferredCustomer extends Customer {
         }
     }
 
+    //Displays the Preferred Customer's information.
     public String toString() {
         return super.toString() +
                 "\nCummulative Purchases: " + getCummulativePurchases() +

@@ -1,3 +1,9 @@
+//Name: Richard John
+//Class: CSC 330
+//Instructor: Professor Richard Weir
+//Date: March 8, 2021
+//Assignment: Customers Inheritance
+
 public class Person {
 
     //Private data members.
@@ -18,6 +24,8 @@ public class Person {
         phoneNumber = p;
     }
 
+
+    //Public Data Members. Accessors and Mutators.
     public String getName() {
         return name;
     }
@@ -42,6 +50,7 @@ public class Person {
         phoneNumber = p;
     }
 
+    //Display of each Person's information.
     public String toString(){
         return "Name: " + getName() + "\nAddress: " + getAddress() + "\nPhone Number: " + getPhoneNumber();
     }
