@@ -22,23 +22,6 @@ public class PreferredCustomer extends Customer {
         discount = d;
     }
 
-    //Public data members. Accessors and Mutators.
-    public double getCummulativePurchases(){
-        return cummulativePurchases;
-    }
-
-    public void setCummulative(double c){
-        cummulativePurchases = c;
-    }
-
-    public double getDiscount(){
-        return discount;
-    }
-
-    public void setDiscount(double d){
-        discount = d;
-    }
-
     //This will help determine how much of a discount the customer has.
     public void determineDiscount(){
         double discount = 0.0;
@@ -61,6 +44,31 @@ public class PreferredCustomer extends Customer {
             setDiscount(discount);
         }
     }
+
+    //Public data members. Accessors and Mutators.
+    public double getCummulativePurchases(){
+        return cummulativePurchases;
+    }
+
+    public void setCummulative(double c){
+        cummulativePurchases = c;
+    }
+
+    //Adds more money to total cummulative purchases.
+    public void makePurchase(double price){
+        cummulativePurchases = cummulativePurchases + price;
+        determineDiscount();
+    }
+
+    public double getDiscount(){
+        return discount;
+    }
+
+    public void setDiscount(double d){
+        discount = d;
+    }
+
+
 
     //Displays the Preferred Customer's information.
     public String toString() {
