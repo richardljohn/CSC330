@@ -12,5 +12,5 @@ public class MaxPotion implements Item{
             p.setHp(p.getMaxHp());
         }
     }
-    
+
 }

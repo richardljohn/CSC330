@@ -1,7 +1,12 @@
 public abstract class Player {
 
-    private Pokemon playerPokemon;
-    private Item bagItem;
+    private Pokemon pokemon;
+    private Item item;
+
+    Player(Pokemon p, Item i){
+        pokemon = p;
+        item = i;
+    }
 
     public abstract Pokemon getPokemon();
     public abstract Item getItem();

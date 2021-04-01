@@ -4,8 +4,7 @@ public class HumanPlayer extends Player{
     private Item item;
 
     public HumanPlayer(Pokemon p, Item i) {
-        pokemon = p;
-        item = i;
+        super(p, i);
     }
 
     @Override

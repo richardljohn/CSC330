@@ -4,8 +4,7 @@ public class ComputerPlayer extends Player {
     private Item item;
 
     ComputerPlayer(Pokemon p, Item i){
-        pokemon = p;
-        item = i;
+        super(p, i);
     }
 
     @Override
