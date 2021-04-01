@@ -1,31 +1,30 @@
 import java.util.ArrayList;
 
-public class Charizard extends Pokemon {
-
-    private String name = "Charizard";
-    private String type = "Fire";
-    private String typeTwo = "Flying";
-    private int hp = 150;
-    private int maxHp = 150;
+public class Blastoise extends Pokemon{
+    private String name = "Blastoise";
+    private String type = "Water";
+    private String typeTwo = "None";
+    private int hp = 300;
+    private int maxHp = 300;
     private ArrayList<Attack> attacks = new ArrayList<Attack>();
 
-    Charizard() {
-        name = "Charizard";
-        type = "Fire";
-        typeTwo = "Flying";
-        hp = 150;
-        maxHp = 150;
+    Blastoise(){
+        name = "Blastoise";
+        type = "Water";
+        typeTwo = "None";
+        hp = 300;
+        maxHp = 300;
         setMoves();
     }
 
     @Override
     public String getName() {
-        return "Charizard";
+        return "Blastoise";
     }
 
     @Override
     public String getType() {
-        return "Fire/Flying";
+        return "Water";
     }
 
     @Override
@@ -34,7 +33,7 @@ public class Charizard extends Pokemon {
     }
 
     @Override
-    public int getMaxHp() {
+    public int getMaxHp(){
         return maxHp;
     }
 
@@ -45,13 +44,13 @@ public class Charizard extends Pokemon {
 
     @Override
     public void setMoves() {
-        Attack flamethrower = new Attack("Flamethrower", "Fire", 30, 10);
+        Attack hydroPump = new Attack("Hydro Pump", "Water", 70, 5);
         Attack tackle = new Attack();
-        Attack solarBlaze = new Attack("Solar Blaze", "Grass", 90, 10);
+        Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
         Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
-        attacks.add(flamethrower);
+        attacks.add(hydroPump);
         attacks.add(tackle);
-        attacks.add(solarBlaze);
+        attacks.add(iceBeam);
         attacks.add(dragonPulse);
     }
 
