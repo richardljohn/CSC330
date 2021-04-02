@@ -1,20 +1,17 @@
 public class HumanPlayer extends Player{
 
-    private Pokemon pokemon;
-    private Item item;
-
     public HumanPlayer(Pokemon p, Item i) {
         super(p, i);
     }
 
     @Override
     public Pokemon getPokemon() {
-        return pokemon;
+        return super.pokemon;
     }
 
     @Override
     public Item getItem() {
-        return item;
+        return super.item;
     }
 
     @Override
@@ -23,10 +20,10 @@ public class HumanPlayer extends Player{
     }
 
     public void setPokemon(Pokemon p){
-        pokemon = p;
+        super.pokemon = p;
     }
 
     public void setItem(Item i) {
-        item = i;
+        super.item = i;
     }
 }

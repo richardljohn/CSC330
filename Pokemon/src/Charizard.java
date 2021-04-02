@@ -5,16 +5,16 @@ public class Charizard extends Pokemon {
     private String name = "Charizard";
     private String type = "Fire";
     private String typeTwo = "Flying";
-    private int hp = 150;
-    private int maxHp = 150;
+    private int hp = 210;
+    private int maxHp = 210;
     private ArrayList<Attack> attacks = new ArrayList<Attack>();
 
     Charizard() {
         name = "Charizard";
         type = "Fire";
         typeTwo = "Flying";
-        hp = 150;
-        maxHp = 150;
+        hp = 210;
+        maxHp = 210;
         setMoves();
     }
 
