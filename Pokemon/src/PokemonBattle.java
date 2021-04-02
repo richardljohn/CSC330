@@ -9,9 +9,11 @@ public class PokemonBattle {
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, p);
         System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
-        //enemyBlastoise.attack(myCharizard);
-        //System.out.println();
-        //myCharizard.attack(enemyBlastoise);
+        enemyBlastoise.attack(myCharizard);
+        System.out.println();
+        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+        myCharizard.attack(enemyBlastoise);
+        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
     }
 }
 

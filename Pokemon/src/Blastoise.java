@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Blastoise extends Pokemon{
     private String name = "Blastoise";
@@ -6,61 +7,35 @@ public class Blastoise extends Pokemon{
     private String typeTwo = "None";
     private int hp = 300;
     private int maxHp = 300;
-    private ArrayList<Attack> attacks = new ArrayList<Attack>();
+    private ArrayList<Attack> bAttacks = new ArrayList<Attack>();
+    private Scanner attackInput = new Scanner(System.in);
 
     Blastoise(){
-        name = "Blastoise";
-        type = "Water";
-        typeTwo = "None";
-        hp = 300;
-        maxHp = 300;
+        super("Blastoise", "Water", "None", 300);
         setMoves();
     }
 
     @Override
-    public String getName() {
-        return "Blastoise";
-    }
-
-    @Override
-    public String getType() {
-        return "Water";
-    }
-
-    @Override
-    public int getHp() {
-        return hp;
-    }
-
-    @Override
-    public int getMaxHp(){
-        return maxHp;
-    }
-
-    @Override
-    public void setHp(int h) {
-        hp = h;
-    }
-
-    @Override
     public void setMoves() {
-        Attack hydroPump = new Attack("Hydro Pump", "Water", 70, 5);
+        Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
         Attack tackle = new Attack();
         Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
         Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
-        attacks.add(hydroPump);
-        attacks.add(tackle);
-        attacks.add(iceBeam);
-        attacks.add(dragonPulse);
+        bAttacks.add(hydroPump);
+        bAttacks.add(tackle);
+        bAttacks.add(iceBeam);
+        bAttacks.add(dragonPulse);
     }
 
     @Override
     public void attack(Pokemon other) {
         System.out.println("Choose your attack...");
-        for(int i = 0; i < attacks.size(); i++){
-            System.out.println((i+1) + ". " + attacks.get(i));
+        for(int i = 0; i < bAttacks.size(); i++){
+            System.out.println((i+1) + ". " + bAttacks.get(i));
         }
         System.out.print("Enter 1-4: ");
+        int choice = attackInput.nextInt();
+        other.takeDamage(bAttacks.get(choice - 1));
     }
 
     @Override

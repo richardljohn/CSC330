@@ -1,46 +1,19 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Charizard extends Pokemon {
 
-    private String name = "Charizard";
-    private String type = "Fire";
-    private String typeTwo = "Flying";
-    private int hp = 210;
-    private int maxHp = 210;
-    private ArrayList<Attack> attacks = new ArrayList<Attack>();
+//    private String name = "Charizard";
+//    private String type = "Fire";
+//    private String typeTwo = "Flying";
+//    private int hp = 210;
+//    private int maxHp = 210;
+    private ArrayList<Attack> cAttacks = new ArrayList<Attack>();
+    private Scanner attackInput = new Scanner(System.in);
 
     Charizard() {
-        name = "Charizard";
-        type = "Fire";
-        typeTwo = "Flying";
-        hp = 210;
-        maxHp = 210;
+        super("Charizard", "Fire", "Flying", 210);
         setMoves();
-    }
-
-    @Override
-    public String getName() {
-        return "Charizard";
-    }
-
-    @Override
-    public String getType() {
-        return "Fire/Flying";
-    }
-
-    @Override
-    public int getHp() {
-        return hp;
-    }
-
-    @Override
-    public int getMaxHp() {
-        return maxHp;
-    }
-
-    @Override
-    public void setHp(int h) {
-        hp = h;
     }
 
     @Override
@@ -49,19 +22,21 @@ public class Charizard extends Pokemon {
         Attack tackle = new Attack();
         Attack solarBlaze = new Attack("Solar Blaze", "Grass", 90, 10);
         Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
-        attacks.add(flamethrower);
-        attacks.add(tackle);
-        attacks.add(solarBlaze);
-        attacks.add(dragonPulse);
+        cAttacks.add(flamethrower);
+        cAttacks.add(tackle);
+        cAttacks.add(solarBlaze);
+        cAttacks.add(dragonPulse);
     }
 
     @Override
     public void attack(Pokemon other) {
         System.out.println("Choose your attack...");
-        for(int i = 0; i < attacks.size(); i++){
-            System.out.println((i+1) + ". " + attacks.get(i));
+        for(int i = 0; i < cAttacks.size(); i++){
+            System.out.println((i+1) + ". " + cAttacks.get(i));
         }
         System.out.print("Enter 1-4: ");
+        int choice = attackInput.nextInt();
+        other.takeDamage(cAttacks.get(choice - 1));
     }
 
     @Override
@@ -72,7 +47,7 @@ public class Charizard extends Pokemon {
     @Override
     public void takeDamage(Attack move) {
         if((move.getType().equals("Water")) || (move.getType().equals("Electric"))){
-            int damage = move.getPower() * 2;
+            int damage = (move.getPower()) * 2;
             setHp(getHp() - damage);
         }
         if(move.getType().equals("Rock")){
