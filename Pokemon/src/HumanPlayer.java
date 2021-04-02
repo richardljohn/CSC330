@@ -19,7 +19,7 @@ public class HumanPlayer extends Player{
 
     @Override
     public void run() {
-        System.out.print("I am running!");
+        System.out.print("You got away safely.");
     }
 
     public void setPokemon(Pokemon p){

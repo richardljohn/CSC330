@@ -8,9 +8,10 @@ public class PokemonBattle {
         Potion p = new Potion();
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, p);
-        enemyBlastoise.attack(myCharizard);
+        System.out.println(You.getPokemon());
+        //enemyBlastoise.attack(myCharizard);
         System.out.println();
-        myCharizard.attack(enemyBlastoise);
+        //myCharizard.attack(enemyBlastoise);
     }
 }
 

@@ -17,4 +17,8 @@ public abstract class Pokemon {
 
     public abstract void attack(Pokemon other);
     public abstract void speak();
+    public abstract void takeDamage(Attack move);
+    public String toString(){
+        return getName() + "\tHealth: " + getHp() + "/" + getMaxHp();
+    }
 }
