@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,7 +17,8 @@ public class Blastoise extends Pokemon{
     }
 
     @Override
-    public void setMoves() {
+    public ArrayList<Attack> setMoves() {
+        ArrayList<Attack> bAttacks = new ArrayList<Attack();
         Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
         Attack tackle = new Attack();
         Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
@@ -25,6 +27,7 @@ public class Blastoise extends Pokemon{
         bAttacks.add(tackle);
         bAttacks.add(iceBeam);
         bAttacks.add(dragonPulse);
+        return bAttacks;
     }
 
     @Override

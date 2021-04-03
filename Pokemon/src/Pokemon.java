@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ public abstract class Pokemon {
     private String typeTwo;
     private int hp;
     private int maxHp;
+    private ArrayList<Attack> attacks = new ArrayList<Attack>();
 
     Pokemon(String n, String t, String tt, int h){
         name = n;
@@ -53,7 +55,7 @@ public abstract class Pokemon {
         maxHp = mh;
     }
 
-    public abstract void setMoves();
+    public abstract ArrayList<Attack> setMoves();
     public abstract void attack(Pokemon other);
     public abstract void speak();
     public abstract void takeDamage(Attack move);
