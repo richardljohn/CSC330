@@ -3,21 +3,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Blastoise extends Pokemon{
-    private String name = "Blastoise";
-    private String type = "Water";
-    private String typeTwo = "None";
-    private int hp = 300;
-    private int maxHp = 300;
-    private ArrayList<Attack> bAttacks = new ArrayList<Attack>();
-    private Scanner attackInput = new Scanner(System.in);
+//    private String name = "Blastoise";
+//    private String type = "Water";
+//    private String typeTwo = "None";
+//    private int hp = 300;
+//    private int maxHp = 300;
+//    private ArrayList<Attack> bAttacks = new ArrayList<Attack>();
+//    private Scanner attackInput = new Scanner(System.in);
 
     Blastoise(){
         super("Blastoise", "Water", "None", 300);
-        setMoves();
+        setMoves(giveMoves());
     }
 
     @Override
-    public ArrayList<Attack> setMoves() {
+    public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> bAttacks = new ArrayList<Attack();
         Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
         Attack tackle = new Attack();

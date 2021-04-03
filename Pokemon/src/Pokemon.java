@@ -55,7 +55,13 @@ public abstract class Pokemon {
         maxHp = mh;
     }
 
-    public abstract ArrayList<Attack> setMoves();
+    public void setMoves(ArrayList<Attack> pkmnAttacks){
+        for(int i = 0; i < pkmnAttacks.size(); i++){
+            attacks.add(pkmnAttacks.get(i));
+        }
+    }
+
+    public abstract ArrayList<Attack> giveMoves();
     public abstract void attack(Pokemon other);
     public abstract void speak();
     public abstract void takeDamage(Attack move);
