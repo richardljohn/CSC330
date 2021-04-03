@@ -61,6 +61,17 @@ public abstract class Pokemon {
         }
     }
 
+    public void displayMoves(){
+        System.out.println("Choose your attack...");
+        for(int i = 0; i < attacks.size(); i++) {
+            System.out.println((i + 1) + ". " + attacks.get(i));
+        }
+    }
+
+    public Attack selectAttack(int choice){
+        return attacks.get(choice);
+    }
+
     public abstract ArrayList<Attack> giveMoves();
     public abstract void attack(Pokemon other);
     public abstract void speak();

@@ -18,7 +18,7 @@ public class Blastoise extends Pokemon{
 
     @Override
     public ArrayList<Attack> giveMoves() {
-        ArrayList<Attack> bAttacks = new ArrayList<Attack();
+        ArrayList<Attack> bAttacks = new ArrayList<Attack>();
         Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
         Attack tackle = new Attack();
         Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
@@ -32,13 +32,11 @@ public class Blastoise extends Pokemon{
 
     @Override
     public void attack(Pokemon other) {
-        System.out.println("Choose your attack...");
-        for(int i = 0; i < bAttacks.size(); i++){
-            System.out.println((i+1) + ". " + bAttacks.get(i));
-        }
+        Scanner input = new Scanner(System.in);
+        super.displayMoves();
         System.out.print("Enter 1-4: ");
-        int choice = attackInput.nextInt();
-        other.takeDamage(bAttacks.get(choice - 1));
+        int choice = input.nextInt();
+        other.takeDamage(selectAttack(choice));
     }
 
     @Override
