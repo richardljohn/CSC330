@@ -17,6 +17,7 @@ public abstract class Pokemon {
         typeTwo = tt;
         hp = h;
         maxHp = h;
+        setMoves(giveMoves());
     }
 
     public String getName(){
@@ -33,6 +34,9 @@ public abstract class Pokemon {
     }
     public int getMaxHp(){
         return maxHp;
+    }
+    public ArrayList<Attack> getAttacks(){
+        return attacks;
     }
 
     public void setName(String n){
@@ -56,6 +60,7 @@ public abstract class Pokemon {
     }
 
     public void setMoves(ArrayList<Attack> pkmnAttacks){
+        attacks.clear();
         for(int i = 0; i < pkmnAttacks.size(); i++){
             attacks.add(pkmnAttacks.get(i));
         }

@@ -8,16 +8,14 @@ public class Charizard extends Pokemon {
 //    private String typeTwo = "Flying";
 //    private int hp = 210;
 //    private int maxHp = 210;
-    private ArrayList<Attack> cAttacks = new ArrayList<Attack>();
-    private Scanner attackInput = new Scanner(System.in);
 
     Charizard() {
         super("Charizard", "Fire", "Flying", 210);
-        setMoves();
     }
 
     @Override
-    public void setMoves() {
+    public ArrayList<Attack> giveMoves() {
+        ArrayList<Attack> cAttacks = new ArrayList<Attack>();
         Attack flamethrower = new Attack("Flamethrower", "Fire", 30, 10);
         Attack tackle = new Attack();
         Attack solarBlaze = new Attack("Solar Blaze", "Grass", 90, 10);
@@ -26,17 +24,16 @@ public class Charizard extends Pokemon {
         cAttacks.add(tackle);
         cAttacks.add(solarBlaze);
         cAttacks.add(dragonPulse);
+        return cAttacks;
     }
 
     @Override
     public void attack(Pokemon other) {
-        System.out.println("Choose your attack...");
-        for(int i = 0; i < cAttacks.size(); i++){
-            System.out.println((i+1) + ". " + cAttacks.get(i));
-        }
+        Scanner input = new Scanner(System.in);
+        super.displayMoves();
         System.out.print("Enter 1-4: ");
-        int choice = attackInput.nextInt();
-        other.takeDamage(cAttacks.get(choice - 1));
+        int choice = input.nextInt();
+        other.takeDamage(selectAttack(choice));
     }
 
     @Override

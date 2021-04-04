@@ -5,15 +5,16 @@ public class PokemonBattle {
         Blastoise enemyBlastoise = new Blastoise();
         Charizard myCharizard = new Charizard();
         MaxPotion mP = new MaxPotion();
-        Potion p = new Potion();
+        MaxElixir mE = new MaxElixir();
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
-        ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, p);
-        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
-        enemyBlastoise.attack(myCharizard);
-        System.out.println();
-        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
-        myCharizard.attack(enemyBlastoise);
-        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+        ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, mE);
+        //System.out.println(Com.getItem());
+//        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+//        enemyBlastoise.attack(myCharizard);
+//        System.out.println();
+//        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+//        myCharizard.attack(enemyBlastoise);
+//        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
     }
 }
 

@@ -1,6 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Random;
 
 public class Blastoise extends Pokemon{
 //    private String name = "Blastoise";
@@ -13,7 +13,6 @@ public class Blastoise extends Pokemon{
 
     Blastoise(){
         super("Blastoise", "Water", "None", 300);
-        setMoves(giveMoves());
     }
 
     @Override
@@ -32,10 +31,10 @@ public class Blastoise extends Pokemon{
 
     @Override
     public void attack(Pokemon other) {
-        Scanner input = new Scanner(System.in);
+        Random decision = new Random();
         super.displayMoves();
         System.out.print("Enter 1-4: ");
-        int choice = input.nextInt();
+        int choice = 1+decision.nextInt(4);
         other.takeDamage(selectAttack(choice));
     }
 
