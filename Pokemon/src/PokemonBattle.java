@@ -1,4 +1,5 @@
 import java.lang.reflect.GenericArrayType;
+import java.util.Scanner;
 
 public class PokemonBattle {
     public static void main(String[] args){
@@ -8,6 +9,22 @@ public class PokemonBattle {
         MaxElixir mE = new MaxElixir();
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, mE);
+        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+        Scanner input = new Scanner(System.in);
+        while((myCharizard.getHp() != 0 ) && enemyBlastoise.getHp() != 0){
+            System.out.println("1. Fight");
+            System.out.println("2. Use Item");
+            System.out.println("3. Run");
+            System.out.print("What would like to do?: ");
+            int choice = input.nextInt();
+            if(choice == 1){
+                You.getPokemon().attack(enemyBlastoise);
+            }
+            if(choice == 2){
+                You.getItem().use(You.getPokemon());
+            }
+            System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+        }
         //System.out.println(Com.getItem());
 //        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
 //        enemyBlastoise.attack(myCharizard);

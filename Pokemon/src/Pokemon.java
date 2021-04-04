@@ -77,6 +77,12 @@ public abstract class Pokemon {
         return attacks.get(choice);
     }
 
+
+    public String toString(){
+        String a = getName() + "    Health: " + getHp() + "/" + getMaxHp();
+        return a;
+    }
+
     public abstract ArrayList<Attack> giveMoves();
     public abstract void attack(Pokemon other);
     public abstract void speak();

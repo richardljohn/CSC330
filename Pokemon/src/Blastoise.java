@@ -47,14 +47,29 @@ public class Blastoise extends Pokemon{
     public void takeDamage(Attack move) {
         if((move.getType().equals("Grass")) || (move.getType().equals("Electric"))){
             int damage = move.getPower() * 2;
-            setHp(getHp() - damage);
+            if(getHp() - damage < 0){
+                setHp(0);
+            }
+            else {
+                setHp(getHp() - damage);
+            }
         }
         if((move.getType().equals("Ice")) || (move.getType().equals("Fire")) || (move.getType().equals("Water"))) {
             int damage = move.getPower() / 2;
-            setHp(getHp() - damage);
+            if(getHp() - damage < 0){
+                setHp(0);
+            }
+            else {
+                setHp(getHp() - damage);
+            }
         }
         else {
-            setHp(getHp() - move.getPower());
+            if(getHp() - move.getPower() < 0){
+                setHp(0);
+            }
+            else {
+                setHp(getHp() - move.getPower());
+            }
         }
     }
 }
