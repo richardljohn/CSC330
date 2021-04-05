@@ -32,8 +32,9 @@ public class Blastoise extends Pokemon{
     @Override
     public void attack(Pokemon other) {
         Random decision = new Random();
-        super.displayMoves();
-        int choice = 1+decision.nextInt(4);
+//        super.displayMoves();
+        int choice = decision.nextInt(4);
+        System.out.println(getName() + " used " + selectAttack(choice).getName());
         other.takeDamage(selectAttack(choice));
     }
 
