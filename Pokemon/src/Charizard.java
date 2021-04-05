@@ -33,6 +33,7 @@ public class Charizard extends Pokemon {
         super.displayMoves();
         System.out.print("Enter 1-4: ");
         int choice = input.nextInt();
+        System.out.println("Charizard used " + selectAttack(choice-1).getName() + "!");
         other.takeDamage(selectAttack(choice-1));
     }
 

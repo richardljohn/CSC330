@@ -11,7 +11,7 @@ public class PokemonBattle {
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, mE);
         System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
         Scanner input = new Scanner(System.in);
-        while((myCharizard.getHp() != 0 ) && enemyBlastoise.getHp() != 0){
+        while((myCharizard.getHp() != 0) && (enemyBlastoise.getHp() != 0)){
             System.out.println("1. Fight");
             System.out.println("2. Use Item");
             System.out.println("3. Run");
@@ -23,7 +23,16 @@ public class PokemonBattle {
             if(choice == 2){
                 You.getItem().use(You.getPokemon());
             }
+            if(choice == 3){
+                System.out.println("No. There is no running in a Trainer Battle.");
+            }
             System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);
+            if(myCharizard.getHp() == 0){
+                System.out.println("Your Charizard Fainted!");
+            }
+            if(enemyBlastoise.getHp() == 0){
+                System.out.println("The enemy's Blastoise fainted!");
+            }
         }
         //System.out.println(Com.getItem());
 //        System.out.println(myCharizard + "\t\t\t\t\t" + enemyBlastoise);

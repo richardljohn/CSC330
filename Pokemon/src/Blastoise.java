@@ -33,7 +33,6 @@ public class Blastoise extends Pokemon{
     public void attack(Pokemon other) {
         Random decision = new Random();
         super.displayMoves();
-        System.out.print("Enter 1-4: ");
         int choice = 1+decision.nextInt(4);
         other.takeDamage(selectAttack(choice));
     }
