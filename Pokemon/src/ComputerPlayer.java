@@ -1,7 +1,5 @@
 public class ComputerPlayer extends Player {
 
-    private Pokemon pokemon;
-    private Item item;
 
     ComputerPlayer(Pokemon p, Item i){
         super(p, i);
@@ -9,12 +7,12 @@ public class ComputerPlayer extends Player {
 
     @Override
     public Pokemon getPokemon() {
-        return pokemon;
+        return super.pokemon;
     }
 
     @Override
     public Item getItem() {
-        return item;
+        return super.item;
     }
 
     @Override

@@ -8,14 +8,12 @@ public class HumanPlayer extends Player{
 
     @Override
     public Pokemon getPokemon() {
-        Charizard C = new Charizard();
-        return C;
+        return super.pokemon;
     }
 
     @Override
     public Item getItem() {
-        MaxPotion M = new MaxPotion();
-        return M;
+        return super.item;
     }
 
     @Override

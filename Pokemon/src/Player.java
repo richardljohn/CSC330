@@ -1,7 +1,7 @@
 public abstract class Player {
 
-    private Pokemon pokemon;
-    private Item item;
+    protected Pokemon pokemon;
+    protected Item item;
 
     Player(Pokemon p, Item i){
         pokemon = p;
