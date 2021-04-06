@@ -39,7 +39,7 @@ public class Charizard extends Pokemon {
         while(selectAttack(choice - 1).getPP() == 0){
             System.out.println(selectAttack(choice - 1).getName() + " has no more PP!");
             super.displayMoves();
-            System.out.println("Enter 1-4: ");
+            System.out.print("Enter 1-4: ");
             choice = input.nextInt();
         }
         System.out.println(getName() + " used " + selectAttack(choice-1).getName() + "!");
