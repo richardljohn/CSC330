@@ -12,7 +12,7 @@ public class Charizard extends Pokemon {
         ArrayList<Attack> cAttacks = new ArrayList<Attack>();
         Attack flamethrower = new Attack("Flamethrower", "Fire", 30, 10);
         Attack tackle = new Attack();
-        Attack solarBlaze = new Attack("Solar Blaze", "Grass", 90, 10);
+        Attack solarBlaze = new Attack("Solar Beam", "Grass", 60, 10);
         Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
         cAttacks.add(flamethrower);
         cAttacks.add(tackle);
@@ -39,35 +39,29 @@ public class Charizard extends Pokemon {
     @Override
     public void takeDamage(Attack move) {
         if((move.getType().equals("Water")) || (move.getType().equals("Electric"))){
-            int damage = (move.getPower()) * 2;
-            if(getHp() - damage < 0){
+            if(getHp() - move.getPower() * 2 < 0){
                 setHp(0);
             }
-            setHp(getHp() - damage);
+            setHp(getHp() - move.getPower() * 2);
         }
         if(move.getType().equals("Rock")){
-            int damage = move.getPower() * 4;
-            if(getHp() - damage < 0){
+            if(getHp() - move.getPower() * 4 < 0){
                 setHp(0);
             }
             else {
-                setHp(getHp() - damage);
+                setHp(getHp() - move.getPower() * 4);
             }
         }
         if((move.getType().equals("Bug")) || (move.getType().equals("Fire"))) {
-            int damage = move.getPower() / 2;
-            if(getHp() - damage < 0){
+            if(getHp() - move.getPower() / 2 < 0){
                 setHp(0);
             }
             else {
-                setHp(getHp() - damage);
+                setHp(getHp() - move.getPower());
             }
         }
         if((move.getType().equals("Ground"))){
-            int damage = 0;
-            if(getHp() - damage < 0){
-                setHp(0);
-            }
+            System.out.println("It didn't have any effect.");
         }
         else {
             if(getHp() - move.getPower() < 0){

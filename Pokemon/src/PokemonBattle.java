@@ -20,7 +20,7 @@ public class PokemonBattle {
 
         while ((myCharizard.getHp() != 0) && (enemyBlastoise.getHp() != 0)) {
             Random comChoice = new Random();
-            System.out.println("\n" + You.getPokemon() + "\t\t\t\t\t" + Com.getPokemon());
+            System.out.println(You.getPokemon() + "\t\t\t\t\t" + Com.getPokemon());
             System.out.println("1. Fight");
             System.out.println("2. Use Item");
             System.out.println("3. Run");
