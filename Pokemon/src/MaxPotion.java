@@ -1,3 +1,9 @@
+//Name: Richard John
+//Instructor: Professor Richard Thomas Weir
+//Class: CSC 330
+//Assignment: Pokemon Lab
+//Date: April 5, 2021
+
 public class MaxPotion implements Item{
 
     @Override
@@ -7,8 +13,9 @@ public class MaxPotion implements Item{
             System.out.println("It had no effect.");
         }
         else {
-            System.out.println(p.getName() + "'s was restored.");
-            p.setHp(p.getMaxHp());
+            System.out.println(p.getName() + "'s health was restored.");
+            int max = p.getMaxHp();
+            p.setHp(max);
         }
     }
 

@@ -1,3 +1,9 @@
+//Name: Richard John
+//Instructor: Professor Richard Thomas Weir
+//Class: CSC 330
+//Assignment: Pokemon Lab
+//Date: April 5, 2021
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
@@ -11,10 +17,10 @@ public class Blastoise extends Pokemon{
     @Override
     public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> bAttacks = new ArrayList<Attack>();
-        Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
+        Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5, 5);
         Attack tackle = new Attack();
-        Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
-        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
+        Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10, 10);
+        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10, 10);
         bAttacks.add(hydroPump);
         bAttacks.add(tackle);
         bAttacks.add(iceBeam);
@@ -25,15 +31,21 @@ public class Blastoise extends Pokemon{
     @Override
     public void attack(Pokemon other) {
         Random decision = new Random();
-//        super.displayMoves();
         int choice = decision.nextInt(4);
+        if(selectAttack(choice).getPP() == 0){
+            System.out.println(selectAttack(choice).getName() + " has no more PP!");
+            super.displayMoves();
+            System.out.println("Enter 1-4: ");
+            choice = decision.nextInt();
+        }
         System.out.println(getName() + " used " + selectAttack(choice).getName() + "!");
         other.takeDamage(selectAttack(choice));
+        selectAttack(choice).setPP(selectAttack(choice).getPP());
     }
 
     @Override
     public void speak() {
-        System.out.println(getName() + "!!!!!");
+        System.out.println(getName() + ":  " + getName() + "!!!!!");
     }
 
     @Override

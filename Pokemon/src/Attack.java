@@ -1,3 +1,9 @@
+//Name: Richard John
+//Instructor: Professor Richard Thomas Weir
+//Class: CSC 330
+//Assignment: Pokemon Lab
+//Date: April 5, 2021
+
 public class Attack {
 
     private String name;
@@ -14,12 +20,12 @@ public class Attack {
         maxPP = 35;
     }
 
-    Attack(String n, String t, int p_, int pp_){
+    Attack(String n, String t, int p_, int pp_, int mpp){
         name = n;
         type = t;
         power = p_;
         pp = pp_;
-        maxPP = pp_;
+        maxPP = mpp;
     }
 
     public String getName(){
