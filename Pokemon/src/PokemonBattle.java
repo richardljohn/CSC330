@@ -19,9 +19,11 @@ public class PokemonBattle {
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, mE);
 
-        //User input. Driving the battle. Pokemon Battle Start!!!
+        //User input. Player's moves.
         Scanner input = new Scanner(System.in);
         int com = 1;
+
+        //Pokemon Battle Start!!!
         System.out.println("You encountered a Computer Player.\nHe sent out a " + Com.getPokemon().getName() + "!");
         Com.getPokemon().speak();
         System.out.println();
