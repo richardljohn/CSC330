@@ -3,13 +3,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Blastoise extends Pokemon{
-//    private String name = "Blastoise";
-//    private String type = "Water";
-//    private String typeTwo = "None";
-//    private int hp = 300;
-//    private int maxHp = 300;
-//    private ArrayList<Attack> bAttacks = new ArrayList<Attack>();
-//    private Scanner attackInput = new Scanner(System.in);
 
     Blastoise(){
         super("Blastoise", "Water", "None", 300);
@@ -34,7 +27,7 @@ public class Blastoise extends Pokemon{
         Random decision = new Random();
 //        super.displayMoves();
         int choice = decision.nextInt(4);
-        System.out.println(getName() + " used " + selectAttack(choice).getName());
+        System.out.println(getName() + " used " + selectAttack(choice).getName() + "!");
         other.takeDamage(selectAttack(choice));
     }
 

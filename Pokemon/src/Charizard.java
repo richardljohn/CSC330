@@ -3,12 +3,6 @@ import java.util.Scanner;
 
 public class Charizard extends Pokemon {
 
-//    private String name = "Charizard";
-//    private String type = "Fire";
-//    private String typeTwo = "Flying";
-//    private int hp = 210;
-//    private int maxHp = 210;
-
     Charizard() {
         super("Charizard", "Fire", "Flying", 210);
     }
@@ -33,7 +27,7 @@ public class Charizard extends Pokemon {
         super.displayMoves();
         System.out.print("Enter 1-4: ");
         int choice = input.nextInt();
-        System.out.println("Charizard used " + selectAttack(choice-1).getName() + "!");
+        System.out.println(getName() + " used " + selectAttack(choice-1).getName() + "!");
         other.takeDamage(selectAttack(choice-1));
     }
 

@@ -69,7 +69,7 @@ public abstract class Pokemon {
     public void displayMoves(){
         System.out.println("Choose your attack...");
         for(int i = 0; i < attacks.size(); i++) {
-            System.out.println((i + 1) + ". " + attacks.get(i));
+            System.out.println((i+1) + ". " + attacks.get(i));
         }
     }
 
