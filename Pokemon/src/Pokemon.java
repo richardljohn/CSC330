@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public abstract class Pokemon {
 
+    //Private variables.
     private String name;
     private String type;
     private String typeTwo;
@@ -17,6 +18,7 @@ public abstract class Pokemon {
     private int maxHp;
     private ArrayList<Attack> attacks = new ArrayList<Attack>();
 
+    //Only One constructor. Since there is no default Pokemon class.
     Pokemon(String n, String t, String tt, int h){
         name = n;
         type = t;
@@ -26,6 +28,8 @@ public abstract class Pokemon {
         setMoves(giveMoves());
     }
 
+
+    //Public methods
     public String getName(){
         return name;
     }
@@ -44,27 +48,21 @@ public abstract class Pokemon {
     public ArrayList<Attack> getAttacks(){
         return attacks;
     }
-
     public void setName(String n){
         name = n;
     }
-
     public void setType(String t){
         type = t;
     }
-
     public void setTypeTwo(String t){
         typeTwo = t;
     }
-
     public void setHp(int h){
         hp = h;
     }
-
     public void setMaxHp(int mh){
         maxHp = mh;
     }
-
     public void setMoves(ArrayList<Attack> pkmnAttacks){
         attacks.clear();
         for(int i = 0; i < pkmnAttacks.size(); i++){
@@ -72,6 +70,7 @@ public abstract class Pokemon {
         }
     }
 
+    //Displays Each Pokemon's attacks
     public void displayMoves(){
         System.out.println("Choose your attack...");
         for(int i = 0; i < attacks.size(); i++) {
@@ -79,16 +78,18 @@ public abstract class Pokemon {
         }
     }
 
+    //Selects an attack from a Pokemon's moveset.
     public Attack selectAttack(int choice){
         return attacks.get(choice);
     }
 
-
+    //How every Pokemon will be displayed.
     public String toString(){
         String a = getName() + "    Health: " + getHp() + "/" + getMaxHp();
         return a;
     }
 
+    //Abstract methods.
     public abstract ArrayList<Attack> giveMoves();
     public abstract void attack(Pokemon other);
     public abstract void speak();

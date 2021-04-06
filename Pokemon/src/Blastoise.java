@@ -10,10 +10,12 @@ import java.util.Random;
 
 public class Blastoise extends Pokemon{
 
+    //Default Blastoise Information.
     Blastoise(){
         super("Blastoise", "Water", "None", 300);
     }
 
+    //Blastoise's moves.
     @Override
     public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> bAttacks = new ArrayList<Attack>();
@@ -28,6 +30,7 @@ public class Blastoise extends Pokemon{
         return bAttacks;
     }
 
+    //Blastoise's way of attacking.
     @Override
     public void attack(Pokemon other) {
         Random decision = new Random();
@@ -43,13 +46,17 @@ public class Blastoise extends Pokemon{
         selectAttack(choice).setPP(selectAttack(choice).getPP());
     }
 
+    //Blastoise speaking
     @Override
     public void speak() {
         System.out.println(getName() + ":  " + getName() + "!!!!!");
     }
 
+    //Blastoise's weaknesses and resistances.
     @Override
     public void takeDamage(Attack move) {
+
+        //Super effective.
         if((move.getType().equals("Grass")) || (move.getType().equals("Electric"))){
             if(getHp() - move.getPower()*2 < 0){
                 setHp(0);
@@ -58,6 +65,8 @@ public class Blastoise extends Pokemon{
                 setHp(getHp() - move.getPower());
             }
         }
+
+        //Not very effective.
         if((move.getType().equals("Ice")) || (move.getType().equals("Fire")) || (move.getType().equals("Water"))) {
             if(getHp() - move.getPower()/2 < 0){
                 setHp(0);
@@ -66,6 +75,8 @@ public class Blastoise extends Pokemon{
                 setHp(getHp() - move.getPower()/2);
             }
         }
+
+        //Normally effective.
         else {
             if(getHp() - move.getPower() < 0){
                 setHp(0);

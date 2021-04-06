@@ -10,12 +10,16 @@ import java.util.Random;
 
 public class PokemonBattle {
     public static void main(String[] args) {
+
+        //Initializing two Pokemon and two players
         Blastoise enemyBlastoise = new Blastoise();
         Charizard myCharizard = new Charizard();
         MaxPotion mP = new MaxPotion();
         MaxElixir mE = new MaxElixir();
         HumanPlayer You = new HumanPlayer(myCharizard, mP);
         ComputerPlayer Com = new ComputerPlayer(enemyBlastoise, mE);
+
+        //User input. Driving the battle. Pokemon Battle Start!!!
         Scanner input = new Scanner(System.in);
         int com = 1;
         System.out.println("You encountered a Computer Player.\nHe sent out a " + Com.getPokemon().getName() + "!");
@@ -24,13 +28,20 @@ public class PokemonBattle {
         System.out.println("Go " + You.getPokemon().getName() + "!");
         You.getPokemon().speak();
         System.out.println();
+
+        //While loop will keep running until a Pokemon faints or the computer runs.
         while ((myCharizard.getHp() != 0) && (enemyBlastoise.getHp() != 0)) {
-            Random comChoice = new Random();
+
+            Random comChoice = new Random(); //Computer randomizer
+
+            //Menu system
             System.out.println(You.getPokemon() + "\t\t\t\t\t" + Com.getPokemon());
             System.out.println("1. Fight");
             System.out.println("2. Use Item");
             System.out.println("3. Run");
             System.out.print("What would like to do?: ");
+
+            //Your choices.
             int choice = input.nextInt();
             com = 1 + comChoice.nextInt(10);
             if (choice == 1) {
@@ -39,10 +50,16 @@ public class PokemonBattle {
             if (choice == 2) {
                 You.getItem().use(You.getPokemon());
             }
+
+            //Except. You can't run. And if you do attempt to you lose your turn.
             if (choice == 3) {
                 System.out.println("No. There is no running in a Trainer Battle.");
             }
+
+            //Pokemon HP bars displayed again.
             System.out.println(You.getPokemon() + "\t\t\t\t\t" + Com.getPokemon());
+
+            //If your Pokemon fainted or the computer's Pokemon fainted, the battle ends.
             if (myCharizard.getHp() == 0) {
                 System.out.println("Your " + You.getPokemon().getName() + " Fainted!\nYou whited out!!!");
                 break;
@@ -51,16 +68,24 @@ public class PokemonBattle {
                 System.out.println("The enemy's " + Com.getPokemon().getName() + " has fainted!\nYou win!!!!!!");
                 break;
             }
+
+            //Computer choices.
+            //60% of Computer attacking you.
             if (com > 0 && com <= 6) {
                 Com.getPokemon().attack(myCharizard);
             }
+
+            //30% of Computer using item.
             if (com > 7 && com <= 9) {
                 Com.getItem().use(enemyBlastoise);
             }
+            //10% of Computer running.
             if (com == 10) {
                 Com.run();
                 break;
             }
+
+            //If a Pokemon faints because of the enemies move. The battle ends.
             if (You.getPokemon().getHp() == 0) {
                 System.out.println("Your " + You.getPokemon().getName() + " Fainted!\nYou whited out!!!");
                 break;
@@ -73,6 +98,7 @@ public class PokemonBattle {
     }
 }
 
+//Sample battles.
 //Output 1
 /*
 You encountered a Computer Player.

@@ -9,10 +9,12 @@ import java.util.Scanner;
 
 public class Charizard extends Pokemon {
 
+    //Charizard Default Information.
     Charizard() {
         super("Charizard", "Fire", "Flying", 210);
     }
 
+    //Charizard's moves.
     @Override
     public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> cAttacks = new ArrayList<Attack>();
@@ -27,6 +29,7 @@ public class Charizard extends Pokemon {
         return cAttacks;
     }
 
+    //Charizard's moves.
     @Override
     public void attack(Pokemon other) {
         Scanner input = new Scanner(System.in);
@@ -44,19 +47,25 @@ public class Charizard extends Pokemon {
         selectAttack(choice-1).setPP(selectAttack(choice-1).getPP()-1);
     }
 
+    //Charizard speaking.
     @Override
     public void speak() {
         System.out.println(getName() + ":  " + getName() + "!!!!!");
     }
 
+    //Charizard's resistances and weaknesses.
     @Override
     public void takeDamage(Attack move) {
+
+        //Super effective.
         if((move.getType().equals("Water")) || (move.getType().equals("Electric"))){
             if(getHp() - move.getPower() * 2 < 0){
                 setHp(0);
             }
             setHp(getHp() - move.getPower() * 2);
         }
+
+        //Quadruple effective.
         if(move.getType().equals("Rock")){
             if(getHp() - move.getPower() * 4 < 0){
                 setHp(0);
@@ -65,6 +74,8 @@ public class Charizard extends Pokemon {
                 setHp(getHp() - move.getPower() * 4);
             }
         }
+
+        //Not very effective.
         if((move.getType().equals("Bug")) || (move.getType().equals("Fire"))) {
             if(getHp() - move.getPower() / 2 < 0){
                 setHp(0);
@@ -73,9 +84,13 @@ public class Charizard extends Pokemon {
                 setHp(getHp() - move.getPower());
             }
         }
+
+        //Immunity.
         if((move.getType().equals("Ground"))){
             System.out.println("It didn't have any effect.");
         }
+
+        //Normal damage.
         else {
             if(getHp() - move.getPower() < 0){
                 setHp(0);
