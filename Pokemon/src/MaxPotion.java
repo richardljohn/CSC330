@@ -6,6 +6,7 @@
 
 public class MaxPotion implements Item{
 
+    //When a Max Potion is used, a Pokemon's Health is completely restored.
     @Override
     public void use(Pokemon p) {
         System.out.println("Max Potion is being used.");

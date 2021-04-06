@@ -6,12 +6,14 @@
 
 public class Attack {
 
+    //An attack's information.
     private String name;
     private String type;
     private int power;
     private int pp;
     private int maxPP;
 
+    //Default attack is Tackle.
     Attack(){
         name = "Tackle";
         type = "Normal";
@@ -20,6 +22,7 @@ public class Attack {
         maxPP = 35;
     }
 
+    //Specific move constructor
     Attack(String n, String t, int p_, int pp_, int mpp){
         name = n;
         type = t;
@@ -28,30 +31,27 @@ public class Attack {
         maxPP = mpp;
     }
 
+    //Public methods.
     public String getName(){
         return name;
     }
-
     public String getType() {
         return type;
     }
-
     public int getPower() {
         return power;
     }
-
     public int getPP(){
         return pp;
     }
-
+    public int getMaxPP() { return maxPP; }
     public void setPP(int p){
         pp = p;
     }
 
-    public int getMaxPP() { return maxPP; }
-
+    //A way an attack is displayed.
     public String toString(){
-        String a = getName() + "   Power:" + getPower() + "\n   Type: " + getType() + "  " + "PP: " + getPP() + "/" + getPP();
+        String a = getName() + "   Power:" + getPower() + "\n   Type: " + getType() + "  " + "PP: " + getPP() + "/" + getMaxPP();
         return a;
     }
 }

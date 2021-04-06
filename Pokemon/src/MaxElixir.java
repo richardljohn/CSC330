@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class MaxElixir implements Item {
 
+    //When a Max Elixir is used a Pokemon's moves have their PP fully restored.
     @Override
     public void use(Pokemon p){
         System.out.println("Max Elixir is being used.");
