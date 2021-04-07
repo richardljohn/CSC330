@@ -23,12 +23,12 @@ public class Attack {
     }
 
     //Specific move constructor
-    Attack(String n, String t, int p_, int pp_, int mpp){
+    Attack(String n, String t, int p_, int pp_){
         name = n;
         type = t;
         power = p_;
         pp = pp_;
-        maxPP = mpp;
+        maxPP = pp_;
     }
 
     //Public methods.

@@ -18,10 +18,10 @@ public class Charizard extends Pokemon {
     @Override
     public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> cAttacks = new ArrayList<Attack>();
-        Attack flamethrower = new Attack("Flamethrower", "Fire", 30, 10, 10);
+        Attack flamethrower = new Attack("Flamethrower", "Fire", 30, 10);
         Attack tackle = new Attack();
-        Attack solarBlaze = new Attack("Solar Beam", "Grass", 60, 10, 10);
-        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10, 10);
+        Attack solarBlaze = new Attack("Solar Beam", "Grass", 60, 10);
+        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
         cAttacks.add(flamethrower);
         cAttacks.add(tackle);
         cAttacks.add(solarBlaze);

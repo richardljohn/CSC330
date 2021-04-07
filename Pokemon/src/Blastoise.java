@@ -19,10 +19,10 @@ public class Blastoise extends Pokemon{
     @Override
     public ArrayList<Attack> giveMoves() {
         ArrayList<Attack> bAttacks = new ArrayList<Attack>();
-        Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5, 5);
+        Attack hydroPump = new Attack("Hydro Pump", "Water", 50, 5);
         Attack tackle = new Attack();
-        Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10, 10);
-        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10, 10);
+        Attack iceBeam = new Attack("Ice Beam", "Ice", 30, 10);
+        Attack dragonPulse = new Attack("Dragon Pulse", "Dragon", 30, 10);
         bAttacks.add(hydroPump);
         bAttacks.add(tackle);
         bAttacks.add(iceBeam);
