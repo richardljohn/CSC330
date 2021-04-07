@@ -41,10 +41,13 @@ public class PokemonBattle {
             System.out.println("1. Fight");
             System.out.println("2. Use Item");
             System.out.println("3. Run");
-            System.out.print("What would like to do?: ");
+            System.out.print("What would you like to do?: ");
 
             //Your choices.
             int choice = input.nextInt();
+            while(choice != 1 && choice != 2 && choice != 3){
+                System.out.print("Invalid Input.\nWhat would you like to do?: ");
+            }
             com = 1 + comChoice.nextInt(10);
             if (choice == 1) {
                 You.getPokemon().attack(Com.getPokemon());
@@ -114,7 +117,7 @@ Charizard    Health: 210/210					Blastoise    Health: 300/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -127,21 +130,11 @@ Choose your attack...
 Enter 1-4: 3
 Charizard used Solar Beam!
 Charizard    Health: 210/210					Blastoise    Health: 180/300
-Blastoise used Tackle!
-Charizard    Health: 160/210					Blastoise    Health: 180/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 2
-Max Potion is being used.
-Charizard's health was restored.
 Charizard    Health: 210/210					Blastoise    Health: 180/300
-Blastoise used Ice Beam!
-Charizard    Health: 180/210					Blastoise    Health: 180/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -153,13 +146,13 @@ Choose your attack...
    Type: Dragon  PP: 10/10
 Enter 1-4: 3
 Charizard used Solar Beam!
-Charizard    Health: 180/210					Blastoise    Health: 60/300
-Blastoise used Hydro Pump!
-Charizard    Health: 30/210					Blastoise    Health: 60/300
+Charizard    Health: 210/210					Blastoise    Health: 60/300
+Blastoise used Tackle!
+Charizard    Health: 160/210					Blastoise    Health: 60/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -169,13 +162,14 @@ Choose your attack...
    Type: Grass  PP: 8/10
 4. Dragon Pulse   Power:30
    Type: Dragon  PP: 10/10
-Enter 1-4: 4
-Charizard used Dragon Pulse!
-Charizard    Health: 30/210					Blastoise    Health: 30/300
-Computer fled.
+Enter 1-4: 3
+Charizard used Solar Beam!
+Charizard    Health: 160/210					Blastoise    Health: 0/300
+The enemy's Blastoise has fainted!
+You win!!!!!!
 
 Process finished with exit code 0
-*/
+ */
 
 //Output 2
 /*
@@ -190,7 +184,7 @@ Charizard    Health: 210/210					Blastoise    Health: 300/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -200,41 +194,40 @@ Choose your attack...
    Type: Grass  PP: 10/10
 4. Dragon Pulse   Power:30
    Type: Dragon  PP: 10/10
-Enter 1-4: 2
-Charizard used Tackle!
-Charizard    Health: 210/210					Blastoise    Health: 250/300
-Charizard    Health: 210/210					Blastoise    Health: 250/300
+Enter 1-4: 3
+Charizard used Solar Beam!
+Charizard    Health: 210/210					Blastoise    Health: 180/300
+Blastoise used Dragon Pulse!
+Charizard    Health: 180/210					Blastoise    Health: 180/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 3
+No. There is no running in a Trainer Battle.
+Charizard    Health: 180/210					Blastoise    Health: 180/300
+Blastoise used Hydro Pump!
+Charizard    Health: 30/210					Blastoise    Health: 180/300
+1. Fight
+2. Use Item
+3. Run
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
 2. Tackle   Power:50
-   Type: Normal  PP: 34/35
+   Type: Normal  PP: 35/35
 3. Solar Beam   Power:60
-   Type: Grass  PP: 10/10
+   Type: Grass  PP: 9/10
 4. Dragon Pulse   Power:30
    Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Charizard used Solar Beam!
-Charizard    Health: 210/210					Blastoise    Health: 130/300
-Blastoise used Dragon Pulse!
-Charizard    Health: 180/210					Blastoise    Health: 130/300
+Enter 1-4: 2
+Charizard used Tackle!
+Charizard    Health: 30/210					Blastoise    Health: 130/300
+Charizard    Health: 30/210					Blastoise    Health: 130/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 2
-Max Potion is being used.
-Charizard's health was restored.
-Charizard    Health: 210/210					Blastoise    Health: 130/300
-Blastoise used Tackle!
-Charizard    Health: 160/210					Blastoise    Health: 130/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -244,10 +237,12 @@ Choose your attack...
    Type: Grass  PP: 9/10
 4. Dragon Pulse   Power:30
    Type: Dragon  PP: 10/10
-Enter 1-4: 2
-Charizard used Tackle!
-Charizard    Health: 160/210					Blastoise    Health: 80/300
-Computer fled.
+Enter 1-4: 3
+Charizard used Solar Beam!
+Charizard    Health: 30/210					Blastoise    Health: 10/300
+Blastoise used Hydro Pump!
+Your Charizard Fainted!
+You whited out!!!
 
 Process finished with exit code 0
  */
@@ -265,7 +260,7 @@ Charizard    Health: 210/210					Blastoise    Health: 300/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -278,12 +273,12 @@ Choose your attack...
 Enter 1-4: 3
 Charizard used Solar Beam!
 Charizard    Health: 210/210					Blastoise    Health: 180/300
-Blastoise used Ice Beam!
-Charizard    Health: 180/210					Blastoise    Health: 180/300
+Blastoise used Tackle!
+Charizard    Health: 160/210					Blastoise    Health: 180/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -293,15 +288,43 @@ Choose your attack...
    Type: Grass  PP: 9/10
 4. Dragon Pulse   Power:30
    Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Charizard used Solar Beam!
-Charizard    Health: 180/210					Blastoise    Health: 60/300
+Enter 1-4: 4
+Charizard used Dragon Pulse!
+Charizard    Health: 160/210					Blastoise    Health: 150/300
 Blastoise used Hydro Pump!
-Charizard    Health: 30/210					Blastoise    Health: 60/300
+Charizard    Health: 10/210					Blastoise    Health: 150/300
 1. Fight
 2. Use Item
 3. Run
-What would like to do?: 1
+What would you like to do?: 2
+Max Potion is being used.
+Charizard's health was restored.
+Charizard    Health: 210/210					Blastoise    Health: 150/300
+Blastoise used Tackle!
+Charizard    Health: 160/210					Blastoise    Health: 150/300
+1. Fight
+2. Use Item
+3. Run
+What would you like to do?: 1
+Choose your attack...
+1. Flamethrower   Power:30
+   Type: Fire  PP: 10/10
+2. Tackle   Power:50
+   Type: Normal  PP: 35/35
+3. Solar Beam   Power:60
+   Type: Grass  PP: 9/10
+4. Dragon Pulse   Power:30
+   Type: Dragon  PP: 9/10
+Enter 1-4: 3
+Charizard used Solar Beam!
+Charizard    Health: 160/210					Blastoise    Health: 30/300
+Max Elixir is being used.
+Blastoise's moves were restored!!
+Charizard    Health: 160/210					Blastoise    Health: 30/300
+1. Fight
+2. Use Item
+3. Run
+What would you like to do?: 1
 Choose your attack...
 1. Flamethrower   Power:30
    Type: Fire  PP: 10/10
@@ -310,106 +333,10 @@ Choose your attack...
 3. Solar Beam   Power:60
    Type: Grass  PP: 8/10
 4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Charizard used Solar Beam!
-Charizard    Health: 30/210					Blastoise    Health: 0/300
-The enemy's Blastoise has fainted!
-You win!!!!!!
-
-Process finished with exit code 0
- */
-
-//Output 4 (For this one I changed Solar Beam's PP to 2.)
-/*
-You encountered a Computer Player.
-He sent out a Blastoise!
-Blastoise:  Blastoise!!!!!
-
-Go Charizard!
-Charizard:  Charizard!!!!!
-
-Charizard    Health: 210/210					Blastoise    Health: 300/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 1
-Choose your attack...
-\1. Flamethrower   Power:30
-   Type: Fire  PP: 10/10
-2. Tackle   Power:50
-   Type: Normal  PP: 35/35
-3. Solar Beam   Power:60
-   Type: Grass  PP: 2/2
-4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Charizard used Solar Beam!
-Charizard    Health: 210/210					Blastoise    Health: 180/300
-Charizard    Health: 210/210					Blastoise    Health: 180/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 1
-Choose your attack...
-1. Flamethrower   Power:30
-   Type: Fire  PP: 10/10
-2. Tackle   Power:50
-   Type: Normal  PP: 35/35
-3. Solar Beam   Power:60
-   Type: Grass  PP: 1/2
-4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Charizard used Solar Beam!
-Charizard    Health: 210/210					Blastoise    Health: 60/300
-Blastoise used Tackle!
-Charizard    Health: 160/210					Blastoise    Health: 60/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 1
-Choose your attack...
-1. Flamethrower   Power:30
-   Type: Fire  PP: 10/10
-2. Tackle   Power:50
-   Type: Normal  PP: 35/35
-3. Solar Beam   Power:60
-   Type: Grass  PP: 0/2
-4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
-Enter 1-4: 3
-Solar Beam has no more PP!
-Choose your attack...
-1. Flamethrower   Power:30
-   Type: Fire  PP: 10/10
-2. Tackle   Power:50
-   Type: Normal  PP: 35/35
-3. Solar Beam   Power:60
-   Type: Grass  PP: 0/2
-4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
+   Type: Dragon  PP: 9/10
 Enter 1-4: 2
 Charizard used Tackle!
-Charizard    Health: 160/210					Blastoise    Health: 10/300
-Blastoise used Tackle!
-Charizard    Health: 110/210					Blastoise    Health: 10/300
-1. Fight
-2. Use Item
-3. Run
-What would like to do?: 1
-Choose your attack...
-1. Flamethrower   Power:30
-   Type: Fire  PP: 10/10
-2. Tackle   Power:50
-   Type: Normal  PP: 34/35
-3. Solar Beam   Power:60
-   Type: Grass  PP: 0/2
-4. Dragon Pulse   Power:30
-   Type: Dragon  PP: 10/10
-Enter 1-4: 4
-Charizard used Dragon Pulse!
-Charizard    Health: 110/210					Blastoise    Health: 0/300
+Charizard    Health: 160/210					Blastoise    Health: 0/300
 The enemy's Blastoise has fainted!
 You win!!!!!!
 

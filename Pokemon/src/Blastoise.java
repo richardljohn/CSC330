@@ -37,7 +37,6 @@ public class Blastoise extends Pokemon{
         int choice = decision.nextInt(4);
         while(selectAttack(choice).getPP() == 0){
             super.displayMoves();
-            System.out.println("Enter 1-4: ");
             choice = decision.nextInt();
         }
         System.out.println(getName() + " used " + selectAttack(choice).getName() + "!");
