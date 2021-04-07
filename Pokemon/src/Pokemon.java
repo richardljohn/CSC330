@@ -28,7 +28,6 @@ public abstract class Pokemon {
         setMoves(giveMoves());
     }
 
-
     //Public methods
     public String getName(){
         return name;
