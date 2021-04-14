@@ -4,7 +4,7 @@ public class SocSecProcessor {
     public static void main(String[] args) throws SocSecException {
 
         char choice = 'y';
-        String name, socNum;
+        String name = "Robert Roode", socNum = "000-00-0000";
         Scanner input = new Scanner(System.in);
         while(choice == 'y'){
             try {
@@ -17,15 +17,15 @@ public class SocSecProcessor {
             catch (SocSecException sse) {
                 System.out.println(sse);
             }
-//            if(!isValid(socNum)){
-//                System.out.println(name + " " + socNum + " is valid.");
-//                System.out.println("Would you like to continue? Enter (y/n): ");
-//                choice = input.next().toLowerCase().charAt(0);
-//            }
-//            else {
-//                System.out.println("Would you like to continue? Enter (y/n): ");
-//                choice = input.next().toLowerCase().charAt(0);
-//            }
+            if(isValid(socNum)){
+                System.out.println(name + " " + socNum + " is valid.");
+                System.out.print("Would you like to continue? Enter (y/n): ");
+                choice = input.next().toLowerCase().charAt(0);
+            }
+            else {
+                System.out.print("Would you like to continue? Enter (y/n): ");
+                choice = input.next().toLowerCase().charAt(0);
+            }
         }
 
     }
