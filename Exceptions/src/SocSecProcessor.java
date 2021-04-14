@@ -1,21 +1,31 @@
 import java.util.Scanner;
 
 public class SocSecProcessor {
-    public static void main(String[] args){
+    public static void main(String[] args) throws SocSecException {
 
+        char choice = 'y';
+        String name, socNum;
         Scanner input = new Scanner(System.in);
-        while(!input.nextLine().toLowerCase().equals("n")){
-            System.out.print("Enter a name: ");
-            String name = input.nextLine();
-            System.out.print("Enter a social security number: ");
-            String socNum = input.nextLine();
-            if(!isValid(socNum)){
-                System.out.println(name + " " + socNum + " is valid.");
-                System.out.println("Would you like to continue? Enter (y/n): ");
+        while(choice == 'y'){
+            try {
+                System.out.print("Enter a name: ");
+                name = input.nextLine();
+                System.out.print("Enter a social security number: ");
+                socNum = input.nextLine();
+                isValid(socNum);
             }
-            else {
-                System.out.println("Would you like to continue? Enter (y/n): ");
+            catch (SocSecException sse) {
+                System.out.println(sse);
             }
+//            if(!isValid(socNum)){
+//                System.out.println(name + " " + socNum + " is valid.");
+//                System.out.println("Would you like to continue? Enter (y/n): ");
+//                choice = input.next().toLowerCase().charAt(0);
+//            }
+//            else {
+//                System.out.println("Would you like to continue? Enter (y/n): ");
+//                choice = input.next().toLowerCase().charAt(0);
+//            }
         }
 
     }
@@ -38,8 +48,8 @@ public class SocSecProcessor {
                             "\ncharacter that is not a digit");
                 }
             }
-
         }
-        return false;
+        return true;
     }
+
 }
