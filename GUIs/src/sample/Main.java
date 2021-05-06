@@ -30,12 +30,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        //Defining out\r Labels.
+        //Defining our Labels.
         output = new Label("Output File: ");
         input = new Label("Input File: ");
         encrypter = new Label("Message to Encrypt: ");
         decrypter = new Label("Decrypted Message: ");
-        messageLabel = new Label("This message will change based on what you have done.");
+        messageLabel = new Label("This message will change based on what you have done!");
 
         //Defining our Text Fields.
         outputFileField = new TextField();
@@ -47,9 +47,9 @@ public class Main extends Application {
         encryptButton = new Button("Encrypt");
         decryptButton = new Button("Decrypt");
 
-        //Defining our HBoxes
+        //Defining our Horizontal Boxes
         HBox bOne = new HBox(10);
-        HBox bTwo = new HBox(14);
+        HBox bTwo = new HBox(15);
 
         //Hbox one will have the components for both output file and the Encrypt button.
         bOne.setAlignment(Pos.TOP_CENTER);
@@ -59,8 +59,8 @@ public class Main extends Application {
         bTwo.setAlignment(Pos.TOP_CENTER);
         bTwo.getChildren().addAll(input, inputFileField, decrypter, inputMessageField, decryptButton);
 
-        //We define our VBox and put out two HBoxes inside it.
-        root = new VBox(12);
+        //We define our Vertical Box and put our two HBoxes inside it.
+        root = new VBox(10);
         root.setAlignment(Pos.CENTER_LEFT);
         root.getChildren().addAll(bOne, bTwo, messageLabel);
 
